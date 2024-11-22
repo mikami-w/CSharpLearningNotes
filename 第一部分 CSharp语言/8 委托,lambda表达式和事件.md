@@ -428,7 +428,6 @@ OnCalculationPerformed(new CalculationEventArgs("multiply", x, y, result));
 	触发事件时应当考虑**检验事件是否为空**, 通常的方法是使用`.?`运算符, 像示例代码那样调用`Invoke`方法. 如果不进行验空, 当没有任何类订阅该事件而发布者却触发了该事件时, 就会导致试图调用`null.Invoke()`从而抛出`NullReferenceException`异常.
 
 ### 编写事件处理方法并订阅事件
-
 ​	有了前面的步骤, 事件发布者的部分已经编写完成, 现在需要在订阅者类中编写处理事件的方法并使用`+=`运算符将该方法注册到发布者的事件中(即订阅事件).
 
 ​	首先在订阅者类中编写事件处理方法, 该方法的签名必须与事件的委托类型匹配, 如示例代码中的`Program.OnCalculationPerformed`方法:
